@@ -10,7 +10,7 @@ router.get('/',
       } else {
         response.json(dbResult);
       }
-    }
- }
+    });
+ });
 
 module.exports = router;
