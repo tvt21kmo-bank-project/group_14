@@ -34,6 +34,7 @@ var asiakasKorttiRouter = require('./routes/asiakas_kortti');
 var uusiTiliRouter = require('./routes/uusi_tili');
 var asiakasTiedotRouter = require('./routes/asiakas_tiedot');
 var pankkiRouter = require('./routes/pankki');
+var tilitapahtumatRouter = require('./routes/tilitapahtumat');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -53,5 +54,6 @@ app.use('/asiakas_kortti', asiakasKorttiRouter);
 app.use('/uusi_tili', uusiTiliRouter);
 app.use('/asiakas_tiedot', asiakasTiedotRouter);
 app.use('/pankki', pankkiRouter);
+app.use('/tilitapahtumat', tilitapahtumatRouter);
 
 module.exports = app;
