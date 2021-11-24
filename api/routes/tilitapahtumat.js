@@ -9,9 +9,9 @@ router.get('/:tili_idTili?',
       if (err) {
         response.json(err);
       } else {
-        //response.json(dbResult);
+        response.json(dbResult);
         //response.json(dbResult[0].username);
-        response.send(dbResult[0].username);
+        //response.send(dbResult[0].Paivays, dbResult[0].Tapahtuma, dbResult[0].Rahamaara );
       }
     });
   } else {
