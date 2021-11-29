@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const asiakas_kortti = require('../models/asiakas_kortti_model');
+const asiakas_tiedot = require('../models/asiakas_tiedot_model');
 
 router.get('/',
  function(request, response) {
-    asiakas_kortti.get(function(err, dbResult) {
+    asiakas_tiedot.get(function(err, dbResult) {
       if (err) {
         response.json(err);
       } else {
