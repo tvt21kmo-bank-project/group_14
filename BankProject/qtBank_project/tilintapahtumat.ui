@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>391</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,43 +16,37 @@
   <widget class="QGroupBox" name="groupBox_Tilintapahtumat">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>70</y>
-     <width>241</width>
-     <height>161</height>
+     <x>30</x>
+     <y>30</y>
+     <width>331</width>
+     <height>331</height>
     </rect>
    </property>
    <property name="title">
     <string>Tilintapahtumat</string>
    </property>
-   <widget class="QLabel" name="label_Tilintapahtumat">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>20</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>16</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>  Tilintapahtumat</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>90</y>
+      <y>200</y>
       <width>211</width>
-      <height>58</height>
+      <height>113</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="pushButton_HaeTilitapahtumat">
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Hae tilitapahtumat</string>
+       </property>
+      </widget>
+     </item>
      <item>
       <widget class="QPushButton" name="pushButton_Takaisin">
        <property name="font">
@@ -78,6 +72,16 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QTextEdit" name="tilitapahtumat_txtBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>311</width>
+      <height>171</height>
+     </rect>
+    </property>
    </widget>
   </widget>
  </widget>

@@ -12,27 +12,31 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
-        ui = nullptr;
+    ui = nullptr;
 }
+
+// void MainWindow::closeEvent(QCloseEvent *event) {
+// } pääikkunaa sulkemista varten!!!
 
 void MainWindow::on_pushButton_Kirjaudu_sis_clicked()
 {
 
-QJsonObject json;
-json.insert("korttinumero", ui->lineEdit_Korttinumero->text());
-json.insert("PIN", ui->lineEdit_Pin->text());
-QString site_url="http://localhost:3000/kirjaudu";
-QString credentials="newAdmin:newPass";
-QNetworkRequest request((site_url));
-request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-QByteArray data = credentials.toLocal8Bit().toBase64();
-QString headerData = "Basic " + data;
-request.setRawHeader( "Authorization", headerData.toLocal8Bit() );
-loginManager = new QNetworkAccessManager(this);
-connect(loginManager, SIGNAL(finished (QNetworkReply*)),
-this, SLOT(loginSlot(QNetworkReply*)));
-reply = loginManager->post(request, QJsonDocument(json).toJson());
+    QJsonObject json;
+    json.insert("korttinumero", ui->lineEdit_Korttinumero->text());
+    json.insert("PIN", ui->lineEdit_Pin->text());
+    QString site_url="http://localhost:3000/kirjaudu";
+    QString credentials="newAdmin:newPass";
+    QNetworkRequest request((site_url));
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    QByteArray data = credentials.toLocal8Bit().toBase64();
+    QString headerData = "Basic " + data;
+    request.setRawHeader( "Authorization", headerData.toLocal8Bit() );
+    loginManager = new QNetworkAccessManager(this);
+    connect(loginManager, SIGNAL(finished (QNetworkReply*)),
+    this, SLOT(loginSlot(QNetworkReply*)));
+    reply = loginManager->post(request, QJsonDocument(json).toJson());
 }
+
 void MainWindow::loginSlot(QNetworkReply *reply)
 {
     QByteArray response_data = reply->readAll();
@@ -40,6 +44,7 @@ void MainWindow::loginSlot(QNetworkReply *reply)
     if(response_data == "true"){
         qDebug()<< "Oikea tunnus ...avaa form";
         objPankkiMenu->show();
+
     }
     else {
         ui->lineEdit_Korttinumero->setText("");

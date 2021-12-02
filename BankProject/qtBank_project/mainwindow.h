@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 #include "pankkimenu.h"
 
+#include <QCloseEvent>
 #include <QMainWindow>
 #include <QtNetwork>
 #include <QNetworkAccessManager> // allows our app to sen and receive network replies
@@ -25,8 +26,12 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QNetworkAccessManager *loginManager;
-        QNetworkReply *reply;
-        PankkiMenu *objPankkiMenu;
+
+    QNetworkReply *reply;
+    PankkiMenu *objPankkiMenu;
+
+//protected:
+//    void closeEvent(QCloseEvent *event); PÄÄIKKUNAA sulkemista varten!
 };
 
 #endif // MAINWINDOW_H
