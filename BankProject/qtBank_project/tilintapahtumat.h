@@ -24,14 +24,15 @@ private slots:
 
     void on_pushButton_Kirjaudu_ulos_clicked();
 
-    void getTilitapahtumaSlot (QNetworkReply *tilitapahtuma_reply);
+
 
     void on_pushButton_HaeTilitapahtumat_clicked();
+    void getTilitapahtumaSlot (QNetworkReply *reply);
 
 private:
     Ui::Tilintapahtumat *ui;
     QNetworkAccessManager *tilitapahtuma_Manager;
-    QNetworkReply *tilitapahtuma_reply;
+    QNetworkReply *reply;
 };
 
 #endif // TILINTAPAHTUMAT_H

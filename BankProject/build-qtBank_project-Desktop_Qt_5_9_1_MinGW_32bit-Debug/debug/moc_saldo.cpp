@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Saldo_t {
-    QByteArrayData data[6];
-    char stringdata0[120];
+    QByteArrayData data[8];
+    char stringdata0[139];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,17 +32,19 @@ struct qt_meta_stringdata_Saldo_t {
 static const qt_meta_stringdata_Saldo_t qt_meta_stringdata_Saldo = {
     {
 QT_MOC_LITERAL(0, 0, 5), // "Saldo"
-QT_MOC_LITERAL(1, 6, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(2, 28, 0), // ""
-QT_MOC_LITERAL(3, 29, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(4, 53, 30), // "on_pushButton_Takaisin_clicked"
-QT_MOC_LITERAL(5, 84, 35) // "on_pushButton_Kirjaudu_ulos_c..."
+QT_MOC_LITERAL(1, 6, 30), // "on_pushButton_Takaisin_clicked"
+QT_MOC_LITERAL(2, 37, 0), // ""
+QT_MOC_LITERAL(3, 38, 35), // "on_pushButton_Kirjaudu_ulos_c..."
+QT_MOC_LITERAL(4, 74, 30), // "on_pushButton_HaeSaldo_clicked"
+QT_MOC_LITERAL(5, 105, 12), // "getSaldoSlot"
+QT_MOC_LITERAL(6, 118, 14), // "QNetworkReply*"
+QT_MOC_LITERAL(7, 133, 5) // "reply"
 
     },
-    "Saldo\0on_pushButton_clicked\0\0"
-    "on_pushButton_2_clicked\0"
-    "on_pushButton_Takaisin_clicked\0"
-    "on_pushButton_Kirjaudu_ulos_clicked"
+    "Saldo\0on_pushButton_Takaisin_clicked\0"
+    "\0on_pushButton_Kirjaudu_ulos_clicked\0"
+    "on_pushButton_HaeSaldo_clicked\0"
+    "getSaldoSlot\0QNetworkReply*\0reply"
 };
 #undef QT_MOC_LITERAL
 
@@ -63,13 +65,13 @@ static const uint qt_meta_data_Saldo[] = {
        1,    0,   34,    2, 0x08 /* Private */,
        3,    0,   35,    2, 0x08 /* Private */,
        4,    0,   36,    2, 0x08 /* Private */,
-       5,    0,   37,    2, 0x08 /* Private */,
+       5,    1,   37,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 6,    7,
 
        0        // eod
 };
@@ -80,14 +82,24 @@ void Saldo::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         Saldo *_t = static_cast<Saldo *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_pushButton_clicked(); break;
-        case 1: _t->on_pushButton_2_clicked(); break;
-        case 2: _t->on_pushButton_Takaisin_clicked(); break;
-        case 3: _t->on_pushButton_Kirjaudu_ulos_clicked(); break;
+        case 0: _t->on_pushButton_Takaisin_clicked(); break;
+        case 1: _t->on_pushButton_Kirjaudu_ulos_clicked(); break;
+        case 2: _t->on_pushButton_HaeSaldo_clicked(); break;
+        case 3: _t->getSaldoSlot((*reinterpret_cast< QNetworkReply*(*)>(_a[1]))); break;
         default: ;
         }
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+        case 3:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QNetworkReply* >(); break;
+            }
+            break;
+        }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject Saldo::staticMetaObject = {
@@ -120,7 +132,7 @@ int Saldo::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 4)
-            *reinterpret_cast<int*>(_a[0]) = -1;
+            qt_static_metacall(this, _c, _id, _a);
         _id -= 4;
     }
     return _id;

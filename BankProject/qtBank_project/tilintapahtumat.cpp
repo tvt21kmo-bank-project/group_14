@@ -27,23 +27,24 @@ void Tilintapahtumat::on_pushButton_HaeTilitapahtumat_clicked()
 
     QString headerData = "Basic " + data;
     request.setRawHeader( "Authorization", headerData.toLocal8Bit() );
+
     tilitapahtuma_Manager = new QNetworkAccessManager(this);
     connect(tilitapahtuma_Manager, SIGNAL(finished (QNetworkReply*)),
-    this, SLOT(getTilitapahtumalot(QNetworkReply*)));
-    tilitapahtuma_reply = tilitapahtuma_Manager->get(request);
+    this, SLOT(getTilitapahtumaSlot(QNetworkReply*)));
+    reply = tilitapahtuma_Manager->get(request);
 }
 
-//void Tilintapahtumat::getTilitapahtumaSlot(QNetworkReply *tilitapahtuma_reply)
-//{
-    //QByteArray response_data = tilitapahtuma_reply->readAll();
-    //QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
-    //qDebug()<<json_doc["name"];
-    //QString tilitapahtuma = json_doc["name"].toString()+" : "+json_doc["author"].toString()+" : "+json_doc["isbn"].toString();
+void Tilintapahtumat::getTilitapahtumaSlot(QNetworkReply *reply)
+{
+    QByteArray response_data = reply->readAll();
+    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+//    qDebug()<<json_doc["paivays"];
+//    QString tilitapahtuma=json_doc["paivays"].toString(); +" : "+json_doc["tapahtuma"].toString()+" : "+json_doc["rahamaara"].toString();
 
-    //ui->tilitapahtumat_txtBox->setText(tilitapahtuma);
-    //tilitapahtuma_reply -> deleteLater();
-    //tilitapahtuma_Manager -> deleteLater();
-//}
+//    ui->tilitapahtumat_txtBox->setText(tilitapahtuma);
+    // reply -> deleteLater();
+    // tilitapahtuma_Manager -> deleteLater();
+}
 
 void Tilintapahtumat::on_pushButton_Takaisin_clicked()
 {
