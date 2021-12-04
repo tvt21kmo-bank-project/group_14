@@ -1,11 +1,13 @@
 #include "saldo.h"
 #include "ui_saldo.h"
+#include "mainwindow.h"
 
 Saldo::Saldo(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Saldo)
 {
     ui->setupUi(this);
+
 }
 
 Saldo::~Saldo()
@@ -37,11 +39,15 @@ void Saldo::getSaldoSlot(QNetworkReply *reply)
     QString saldo;
     foreach (const QJsonValue &value, json_array) {
     QJsonObject json_obj = value.toObject();
-    saldo+=QString::number(json_obj["Saldo"].toInt()); // +","+json_obj["name"].toString()+","+json_obj["author"].toString()+"\r";
+    saldo+=QString::number(json_obj["Saldo"].toInt())+" €"
+            // +"\n"+json_obj["Saldo"].toInt()
+             +"\n"+json_obj["Kortin_tyyppi"].toString()
+             +"\nLuottoraja on: "+json_obj["Luottoraja"].toInt();
+             // +"\r";
     }
     qDebug()<<saldo;
 
-    ui->txt_Saldo->setText(saldo);
+    ui->text_Saldo->setText(saldo);
     reply->deleteLater();
     saldo_manager->deleteLater();
 }

@@ -44,6 +44,7 @@ void MainWindow::loginSlot(QNetworkReply *reply)
     if(response_data == "true"){
         qDebug()<< "Oikea tunnus ...avaa form";
         objPankkiMenu->show();
+        hide();
 
     }
     else {

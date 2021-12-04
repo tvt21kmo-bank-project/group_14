@@ -19,6 +19,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
 private slots:
     void loginSlot (QNetworkReply *reply);
     void on_pushButton_Kirjaudu_sis_clicked();
@@ -27,10 +28,9 @@ private:
     Ui::MainWindow *ui;
     QNetworkAccessManager *loginManager;
     QNetworkReply *reply;
+
     PankkiMenu *objPankkiMenu;
 
-//protected:
-//    void closeEvent(QCloseEvent *event); PÄÄIKKUNAA sulkemista varten!
 };
 
 #endif // MAINWINDOW_H

@@ -24,6 +24,7 @@ void PankkiMenu::on_pushButton_Saldo_clicked()
 {
 
     objSaldo->show();
+    hide();
 
 }
 

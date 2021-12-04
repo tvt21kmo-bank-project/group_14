@@ -7,12 +7,6 @@
 #include "saldo.h"
 #include "talletus.h"
 
-
-
-
-
-
-
 #include <QWidget>
 
 namespace Ui {

@@ -12,6 +12,10 @@ namespace Ui {
 class Saldo;
 }
 
+// class PankkiSaldoMenu{
+//
+// };
+
 class Saldo : public QWidget
 {
     Q_OBJECT
@@ -34,6 +38,8 @@ private:
     Ui::Saldo *ui;
     QNetworkAccessManager *saldo_manager;
     QNetworkReply *reply;
+
+
 };
 
 #endif // SALDO_H
