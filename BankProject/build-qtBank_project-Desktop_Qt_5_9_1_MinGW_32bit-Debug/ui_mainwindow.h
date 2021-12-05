@@ -33,7 +33,7 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QGroupBox *groupBox_Kirjaudu_sis;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
@@ -57,10 +57,10 @@ public:
         groupBox_Kirjaudu_sis = new QGroupBox(centralWidget);
         groupBox_Kirjaudu_sis->setObjectName(QStringLiteral("groupBox_Kirjaudu_sis"));
         groupBox_Kirjaudu_sis->setGeometry(QRect(30, 30, 311, 171));
-        widget = new QWidget(groupBox_Kirjaudu_sis);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(10, 30, 301, 121));
-        verticalLayout_2 = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(groupBox_Kirjaudu_sis);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 30, 301, 121));
+        verticalLayout_2 = new QVBoxLayout(layoutWidget);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
@@ -71,7 +71,7 @@ public:
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        label_Korttinumero = new QLabel(widget);
+        label_Korttinumero = new QLabel(layoutWidget);
         label_Korttinumero->setObjectName(QStringLiteral("label_Korttinumero"));
         QFont font;
         font.setPointSize(16);
@@ -79,7 +79,7 @@ public:
 
         horizontalLayout->addWidget(label_Korttinumero);
 
-        lineEdit_Korttinumero = new QLineEdit(widget);
+        lineEdit_Korttinumero = new QLineEdit(layoutWidget);
         lineEdit_Korttinumero->setObjectName(QStringLiteral("lineEdit_Korttinumero"));
 
         horizontalLayout->addWidget(lineEdit_Korttinumero);
@@ -90,14 +90,16 @@ public:
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        label_Pin = new QLabel(widget);
+        label_Pin = new QLabel(layoutWidget);
         label_Pin->setObjectName(QStringLiteral("label_Pin"));
         label_Pin->setFont(font);
 
         horizontalLayout_2->addWidget(label_Pin);
 
-        lineEdit_Pin = new QLineEdit(widget);
+        lineEdit_Pin = new QLineEdit(layoutWidget);
         lineEdit_Pin->setObjectName(QStringLiteral("lineEdit_Pin"));
+        lineEdit_Pin->setFrame(true);
+        lineEdit_Pin->setEchoMode(QLineEdit::Password);
 
         horizontalLayout_2->addWidget(lineEdit_Pin);
 
@@ -107,7 +109,7 @@ public:
 
         verticalLayout_2->addLayout(verticalLayout);
 
-        pushButton_Kirjaudu_sis = new QPushButton(widget);
+        pushButton_Kirjaudu_sis = new QPushButton(layoutWidget);
         pushButton_Kirjaudu_sis->setObjectName(QStringLiteral("pushButton_Kirjaudu_sis"));
         pushButton_Kirjaudu_sis->setFont(font);
 
@@ -116,7 +118,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 17));
+        menuBar->setGeometry(QRect(0, 0, 400, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -136,6 +138,7 @@ public:
         groupBox_Kirjaudu_sis->setTitle(QApplication::translate("MainWindow", "Kirjaudu_sis", Q_NULLPTR));
         label_Korttinumero->setText(QApplication::translate("MainWindow", "  Korttinumero", Q_NULLPTR));
         label_Pin->setText(QApplication::translate("MainWindow", "  PIN", Q_NULLPTR));
+        lineEdit_Pin->setText(QString());
         pushButton_Kirjaudu_sis->setText(QApplication::translate("MainWindow", "Kirjaudu", Q_NULLPTR));
     } // retranslateUi
 

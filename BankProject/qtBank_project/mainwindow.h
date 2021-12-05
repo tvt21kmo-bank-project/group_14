@@ -7,6 +7,7 @@
 #include <QtNetwork>
 #include <QNetworkAccessManager> // allows our app to sen and receive network replies
 #include <QJsonDocument>
+#include <QTimer>
 
 namespace Ui {
 class MainWindow;
@@ -30,6 +31,7 @@ private:
     QNetworkReply *reply;
 
     PankkiMenu *objPankkiMenu;
+    QTimer *timer;
 
 };
 

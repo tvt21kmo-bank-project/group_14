@@ -33,7 +33,8 @@ SOURCES += \
     talletus.cpp \
     tilintapahtumat.cpp \
     hae_lainaa.cpp \
-    maksa_lasku.cpp
+    maksa_lasku.cpp \
+    virheform.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -43,7 +44,8 @@ HEADERS += \
     talletus.h \
     tilintapahtumat.h \
     hae_lainaa.h \
-    maksa_lasku.h
+    maksa_lasku.h \
+    virheform.h
 
 FORMS += \
         mainwindow.ui \
@@ -53,4 +55,5 @@ FORMS += \
     talletus.ui \
     tilintapahtumat.ui \
     hae_lainaa.ui \
-    maksa_lasku.ui
+    maksa_lasku.ui \
+    virheform.ui
