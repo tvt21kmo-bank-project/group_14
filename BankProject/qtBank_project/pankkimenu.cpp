@@ -22,32 +22,45 @@ PankkiMenu::~PankkiMenu()
 
 void PankkiMenu::on_pushButton_Saldo_clicked()
 {
-objSaldo->show();
+
+    objSaldo->show();
+    hide();
+
 }
 
 void PankkiMenu::on_pushButton_Nosta_rahaa_clicked()
 {
-objNosta_rahaa->show();
+
+    objNosta_rahaa->show();
+
 }
 
 void PankkiMenu::on_pushButton_Talletus_clicked()
 {
-objTalletus->show();
+
+    objTalletus->show();
+
 }
 
 void PankkiMenu::on_pushButton_Tilintapahtumat_clicked()
 {
-objTilintapahtumat->show();
+
+    objTilintapahtumat->show();
+
 }
 
 void PankkiMenu::on_pushButton_Hae_lainaa_clicked()
 {
-objHae_Lainaa->show();
+
+    objHae_Lainaa->show();
+
 }
 
 void PankkiMenu::on_pushButton_Maksa_lasku_clicked()
 {
-objMaksa_Lasku->show();
+
+    objMaksa_Lasku->show();
+
 }
 
 void PankkiMenu::on_pushButton_Kirjaudu_ulos_clicked()
