@@ -5,7 +5,7 @@
 #include <QCloseEvent>
 #include <QMainWindow>
 #include <QtNetwork>
-#include <QNetworkAccessManager> // allows our app to sen and receive network replies
+#include <QNetworkAccessManager> // allows our app to send and receive network replies
 #include <QJsonDocument>
 #include <QTimer>
 

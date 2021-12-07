@@ -25,7 +25,7 @@ void MainWindow::on_pushButton_Kirjaudu_sis_clicked()
 
     QJsonObject json;
     json.insert("korttinumero", ui->lineEdit_Korttinumero->text());
-    json.insert("PIN", ui->lineEdit_Pin->echoMode());
+    json.insert("PIN", ui->lineEdit_Pin->text());
     QString site_url="http://localhost:3000/kirjaudu";
     QString credentials="newAdmin:newPass";
     QNetworkRequest request((site_url));
@@ -54,6 +54,15 @@ void MainWindow::loginSlot(QNetworkReply *reply)
         objPankkiMenu->show();
         hide(); // piilottaa mainwindow
     }
+
+    else if(passCount == 3){
+        qDebug() <<"woop woop end the program!";
+        hide(); // piilottaa mainwindow
+        VirheForm virheIkkuna;
+        virheIkkuna.setModal(true);
+        virheIkkuna.exec();
+    }
+
     else {
         ui->lineEdit_Korttinumero->setText("");
         ui->lineEdit_Pin->setText("");
@@ -62,27 +71,4 @@ void MainWindow::loginSlot(QNetworkReply *reply)
         ++passCount;
         qDebug()<<passCount;
         }
-
-    if(passCount == 3){
-        qDebug() <<"woop woop end the program!";
-        hide(); // piilottaa mainwindow
-        VirheForm virheIkkuna;
-        virheIkkuna.setModal(true);
-        virheIkkuna.exec();
-    }
-
-//    if(response_data == "true"){
-//        qDebug()<< "Oikea tunnus ...avaa form";
-//        objPankkiMenu->show();
-//        hide();
-
-//    }
-//    else {
-//        ui->lineEdit_Korttinumero->setText("");
-//        ui->lineEdit_Pin->setText("");
-//        qDebug()<<"tunnus ja salasana ei täsmää";
-//        count = count +1;
-//        qDebug()<<count;
-
-
 }
