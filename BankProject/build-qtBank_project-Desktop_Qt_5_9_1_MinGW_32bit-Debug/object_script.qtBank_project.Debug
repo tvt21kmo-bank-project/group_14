@@ -8,6 +8,7 @@ INPUT(
 ./debug\tilintapahtumat.o
 ./debug\hae_lainaa.o
 ./debug\maksa_lasku.o
+./debug\virheform.o
 ./debug\moc_mainwindow.o
 ./debug\moc_pankkimenu.o
 ./debug\moc_saldo.o
@@ -16,4 +17,5 @@ INPUT(
 ./debug\moc_tilintapahtumat.o
 ./debug\moc_hae_lainaa.o
 ./debug\moc_maksa_lasku.o
+./debug\moc_virheform.o
 );

@@ -26,4 +26,16 @@ router.post('/credit_siirto', function(request, response){
 }
 );
 
+router.post('/hae_laina', function(request, response){
+    pankki.laina(request.body, function(err, dbResult){
+        if(err){
+            response.json(err);
+        }
+        else{
+            response.json(dbResult.affectedRows);
+        }
+    })
+}
+);
+
 module.exports = router;

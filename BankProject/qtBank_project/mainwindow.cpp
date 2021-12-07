@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "virheform.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -7,6 +8,10 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     objPankkiMenu = new PankkiMenu;
+
+    timer = new QTimer(this);
+    connect(timer,SIGNAL(timeout()),this,SLOT(close()));
+    timer->start(45000);
 }
 
 MainWindow::~MainWindow()
@@ -14,9 +19,6 @@ MainWindow::~MainWindow()
     delete ui;
     ui = nullptr;
 }
-
-// void MainWindow::closeEvent(QCloseEvent *event) {
-// } pääikkunaa sulkemista varten!!!
 
 void MainWindow::on_pushButton_Kirjaudu_sis_clicked()
 {
@@ -37,19 +39,36 @@ void MainWindow::on_pushButton_Kirjaudu_sis_clicked()
     reply = loginManager->post(request, QJsonDocument(json).toJson());
 }
 
+int passCount = 0;
+
 void MainWindow::loginSlot(QNetworkReply *reply)
 {
+
     QByteArray response_data = reply->readAll();
     qDebug()<<response_data;
+
+
     if(response_data == "true"){
         qDebug()<< "Oikea tunnus ...avaa form";
-        objPankkiMenu->show();
-        hide();
 
+        objPankkiMenu->show();
+        hide(); // piilottaa mainwindow
     }
+
+    else if(passCount == 3){
+        qDebug() <<"woop woop end the program!";
+        hide(); // piilottaa mainwindow
+        VirheForm virheIkkuna;
+        virheIkkuna.setModal(true);
+        virheIkkuna.exec();
+    }
+
     else {
         ui->lineEdit_Korttinumero->setText("");
         ui->lineEdit_Pin->setText("");
         qDebug()<<"tunnus ja salasana ei täsmää";
-    }
+
+        ++passCount;
+        qDebug()<<passCount;
+        }
 }
