@@ -48,11 +48,8 @@ void Tilintapahtumat::getTilitapahtumaSlot(QNetworkReply *reply)
 
 void Tilintapahtumat::on_pushButton_Takaisin_clicked()
 {
-
+    this->close();
+    emit secondWindow();
 }
 
-void Tilintapahtumat::on_pushButton_Kirjaudu_ulos_clicked()
-{
-
-}
 

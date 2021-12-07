@@ -14,13 +14,15 @@ class Talletus : public QWidget
 public:
     explicit Talletus(QWidget *parent = 0);
     ~Talletus();
+signals:
+    void secondWindow();
 
 private slots:
     void on_pushButton_Ok_clicked();
 
     void on_pushButton_Takaisin_clicked();
 
-    void on_pushButton_Kirjaudu_ulos_clicked();
+
 
 private:
     Ui::Talletus *ui;

@@ -55,12 +55,10 @@ void Saldo::getSaldoSlot(QNetworkReply *reply)
 
 void Saldo::on_pushButton_Takaisin_clicked()
 {
-
+    this->close();
+    emit secondWindow();
 }
 
-void Saldo::on_pushButton_Kirjaudu_ulos_clicked()
-{
 
-}
 
 

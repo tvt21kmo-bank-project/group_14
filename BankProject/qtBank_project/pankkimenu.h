@@ -20,6 +20,8 @@ class PankkiMenu : public QWidget
 public:
     explicit PankkiMenu(QWidget *parent = 0);
     ~PankkiMenu();
+signals:
+    void firstWindow();
 
 private slots:
     void on_pushButton_Saldo_clicked();

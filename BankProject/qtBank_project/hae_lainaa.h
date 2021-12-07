@@ -14,13 +14,15 @@ class Hae_Lainaa : public QWidget
 public:
     explicit Hae_Lainaa(QWidget *parent = 0);
     ~Hae_Lainaa();
+signals:
+    void secondWindow();
 
 private slots:
     void on_pushButton_Ok_clicked();
 
     void on_pushButton_Takaisin_clicked();
 
-    void on_pushButton_Kirjaudu_ulos_clicked();
+
 
 private:
     Ui::Hae_Lainaa *ui;

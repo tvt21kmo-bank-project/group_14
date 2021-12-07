@@ -18,11 +18,12 @@ class Tilintapahtumat : public QWidget
 public:
     explicit Tilintapahtumat(QWidget *parent = 0);
     ~Tilintapahtumat();
+signals:
+    void secondWindow();
 
 private slots:
     void on_pushButton_Takaisin_clicked();
 
-    void on_pushButton_Kirjaudu_ulos_clicked();
 
 
 

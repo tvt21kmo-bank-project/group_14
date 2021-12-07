@@ -56,7 +56,8 @@ void Maksa_Lasku::debitSlot(QNetworkReply *reply)
 }
 void Maksa_Lasku::on_pushButton_Takaisin_clicked()
 {
-
+    this->close();
+    emit secondWindow();
 }
 
 void Maksa_Lasku::on_pushButton_Credit_clicked()
