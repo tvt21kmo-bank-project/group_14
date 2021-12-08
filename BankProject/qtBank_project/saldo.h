@@ -21,7 +21,7 @@ class Saldo : public QWidget
     Q_OBJECT
 
 public:
-    explicit Saldo(QWidget *parent = 0);
+    explicit Saldo(QString id, QWidget *parent = 0);
     ~Saldo();
 
 private slots:
@@ -38,7 +38,7 @@ private:
     Ui::Saldo *ui;
     QNetworkAccessManager *saldo_manager;
     QNetworkReply *reply;
-
+    QString idAsiakas;
 
 };
 

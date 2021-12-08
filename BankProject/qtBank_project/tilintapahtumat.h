@@ -16,7 +16,7 @@ class Tilintapahtumat : public QWidget
     Q_OBJECT
 
 public:
-    explicit Tilintapahtumat(QWidget *parent = 0);
+    explicit Tilintapahtumat(QString id, QWidget *parent = 0);
     ~Tilintapahtumat();
 
 private slots:
@@ -33,6 +33,7 @@ private:
     Ui::Tilintapahtumat *ui;
     QNetworkAccessManager *tilitapahtuma_Manager;
     QNetworkReply *reply;
+    QString idAsiakas;
 };
 
 #endif // TILINTAPAHTUMAT_H

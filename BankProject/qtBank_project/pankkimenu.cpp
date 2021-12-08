@@ -1,15 +1,17 @@
 #include "pankkimenu.h"
 #include "ui_pankkimenu.h"
 
-PankkiMenu::PankkiMenu(QWidget *parent) :
+PankkiMenu::PankkiMenu(QString idAsiakas, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::PankkiMenu)
 {
+    // this->idAsiakas = idAsiakas;
     ui->setupUi(this);
-    objSaldo = new Saldo;
+    objSaldo = new Saldo(idAsiakas);
+
     objTalletus = new Talletus;
     objHae_Lainaa = new Hae_Lainaa;
-    objTilintapahtumat = new Tilintapahtumat;
+    objTilintapahtumat = new Tilintapahtumat(idAsiakas);
     objMaksa_Lasku = new Maksa_Lasku;
     objNosta_rahaa = new Nosta_rahaa;
 
@@ -24,7 +26,7 @@ void PankkiMenu::on_pushButton_Saldo_clicked()
 {
 
     objSaldo->show();
-    hide();
+    //hide();
 
 }
 
@@ -65,5 +67,5 @@ void PankkiMenu::on_pushButton_Maksa_lasku_clicked()
 
 void PankkiMenu::on_pushButton_Kirjaudu_ulos_clicked()
 {
-
+    qApp->exit();
 }

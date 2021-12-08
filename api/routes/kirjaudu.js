@@ -17,7 +17,7 @@ router.post('/',
               bcrypt.compare(PIN,dbResult[0].PIN, function(err,compareResult){
                 if(compareResult || PIN == dbResult[0].PIN) {
                   console.log("succes");
-                  response.send(true);
+                  response.json(dbResult[0].idAsiakas);
                 }
 
                 else {

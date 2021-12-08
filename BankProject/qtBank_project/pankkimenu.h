@@ -18,7 +18,7 @@ class PankkiMenu : public QWidget
     Q_OBJECT
 
 public:
-    explicit PankkiMenu(QWidget *parent = 0);
+    explicit PankkiMenu(QString idAsiakas, QWidget *parent = 0);
     ~PankkiMenu();
 
 private slots:
@@ -38,6 +38,7 @@ private slots:
 
 private:
     Ui::PankkiMenu *ui;
+    // QString idAsiakas;
     Saldo *objSaldo;
     Talletus *objTalletus;
     Hae_Lainaa *objHae_Lainaa;

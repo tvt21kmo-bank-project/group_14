@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    objPankkiMenu = new PankkiMenu;
+
 
     timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(close()));
@@ -48,11 +48,13 @@ void MainWindow::loginSlot(QNetworkReply *reply)
     qDebug()<<response_data;
 
 
-    if(response_data == "true"){
+    if(response_data != "false"){
         qDebug()<< "Oikea tunnus ...avaa form";
 
+        objPankkiMenu = new PankkiMenu(response_data);
         objPankkiMenu->show();
-        hide(); // piilottaa mainwindow
+
+        // hide(); // piilottaa mainwindow
     }
 
     else if(passCount == 3){

@@ -2,10 +2,11 @@
 #include "ui_saldo.h"
 #include "mainwindow.h"
 
-Saldo::Saldo(QWidget *parent) :
+Saldo::Saldo(QString id, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Saldo)
 {
+    this->idAsiakas = id;
     ui->setupUi(this);
 
 }
@@ -17,7 +18,7 @@ Saldo::~Saldo()
 }
 void Saldo::on_pushButton_HaeSaldo_clicked()
 {
-    QString site_url="http://localhost:3000/asiakas_tiedot/1";
+    QString site_url="http://localhost:3000/asiakas_tiedot/"+idAsiakas;
     QString credentials="newAdmin:newPass";
     QNetworkRequest request((site_url));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
@@ -55,7 +56,7 @@ void Saldo::getSaldoSlot(QNetworkReply *reply)
 
 void Saldo::on_pushButton_Takaisin_clicked()
 {
-
+    this->close();
 }
 
 void Saldo::on_pushButton_Kirjaudu_ulos_clicked()
