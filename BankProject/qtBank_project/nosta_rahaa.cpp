@@ -15,10 +15,7 @@ Nosta_rahaa::~Nosta_rahaa()
 
 void Nosta_rahaa::on_pushButton_Takaisin_clicked()
 {
-
+    this->close();
+    emit secondWindow();
 }
 
-void Nosta_rahaa::on_pushButton_Kirjaudu_ulos_clicked()
-{
-
-}

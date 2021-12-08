@@ -14,11 +14,13 @@ class Nosta_rahaa : public QWidget
 public:
     explicit Nosta_rahaa(QWidget *parent = 0);
     ~Nosta_rahaa();
+signals:
+    void secondWindow();
 
 private slots:
     void on_pushButton_Takaisin_clicked();
 
-    void on_pushButton_Kirjaudu_ulos_clicked();
+
 
 private:
     Ui::Nosta_rahaa *ui;

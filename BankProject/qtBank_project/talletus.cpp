@@ -20,10 +20,7 @@ void Talletus::on_pushButton_Ok_clicked()
 
 void Talletus::on_pushButton_Takaisin_clicked()
 {
-
+    this->close();
+    emit secondWindow();
 }
 
-void Talletus::on_pushButton_Kirjaudu_ulos_clicked()
-{
-
-}

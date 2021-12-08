@@ -17,8 +17,8 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -32,7 +32,8 @@ public:
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *label_Tilin_saldo;
-    QLineEdit *lineEdit_Saldo;
+    QTextEdit *text_Saldo;
+    QPushButton *pushButton_HaeSaldo;
     QPushButton *pushButton_Takaisin;
 
     void setupUi(QWidget *Saldo)
@@ -42,10 +43,10 @@ public:
         Saldo->resize(400, 300);
         groupBox_Saldo = new QGroupBox(Saldo);
         groupBox_Saldo->setObjectName(QStringLiteral("groupBox_Saldo"));
-        groupBox_Saldo->setGeometry(QRect(40, 60, 291, 181));
+        groupBox_Saldo->setGeometry(QRect(40, 30, 291, 211));
         layoutWidget = new QWidget(groupBox_Saldo);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 40, 271, 111));
+        layoutWidget->setGeometry(QRect(10, 40, 271, 153));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -59,13 +60,19 @@ public:
 
         horizontalLayout->addWidget(label_Tilin_saldo);
 
-        lineEdit_Saldo = new QLineEdit(layoutWidget);
-        lineEdit_Saldo->setObjectName(QStringLiteral("lineEdit_Saldo"));
+        text_Saldo = new QTextEdit(layoutWidget);
+        text_Saldo->setObjectName(QStringLiteral("text_Saldo"));
 
-        horizontalLayout->addWidget(lineEdit_Saldo);
+        horizontalLayout->addWidget(text_Saldo);
 
 
         verticalLayout->addLayout(horizontalLayout);
+
+        pushButton_HaeSaldo = new QPushButton(layoutWidget);
+        pushButton_HaeSaldo->setObjectName(QStringLiteral("pushButton_HaeSaldo"));
+        pushButton_HaeSaldo->setFont(font);
+
+        verticalLayout->addWidget(pushButton_HaeSaldo);
 
         pushButton_Takaisin = new QPushButton(layoutWidget);
         pushButton_Takaisin->setObjectName(QStringLiteral("pushButton_Takaisin"));
@@ -84,6 +91,7 @@ public:
         Saldo->setWindowTitle(QApplication::translate("Saldo", "Form", Q_NULLPTR));
         groupBox_Saldo->setTitle(QApplication::translate("Saldo", "Saldo", Q_NULLPTR));
         label_Tilin_saldo->setText(QApplication::translate("Saldo", "  Tilin saldo", Q_NULLPTR));
+        pushButton_HaeSaldo->setText(QApplication::translate("Saldo", "Hae Saldo", Q_NULLPTR));
         pushButton_Takaisin->setText(QApplication::translate("Saldo", "Takaisin", Q_NULLPTR));
     } // retranslateUi
 

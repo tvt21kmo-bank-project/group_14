@@ -18,6 +18,8 @@ class Maksa_Lasku : public QWidget
 public:
     explicit Maksa_Lasku(QWidget *parent = 0);
     ~Maksa_Lasku();
+signals:
+    void secondWindow();
 
 private slots:
     void on_pushButton_Debit_clicked();

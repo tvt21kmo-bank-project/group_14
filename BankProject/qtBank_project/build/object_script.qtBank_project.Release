@@ -8,6 +8,7 @@ INPUT(
 ./release\tilintapahtumat.o
 ./release\hae_lainaa.o
 ./release\maksa_lasku.o
+./release\virheform.o
 ./release\moc_mainwindow.o
 ./release\moc_pankkimenu.o
 ./release\moc_saldo.o
@@ -16,4 +17,5 @@ INPUT(
 ./release\moc_tilintapahtumat.o
 ./release\moc_hae_lainaa.o
 ./release\moc_maksa_lasku.o
+./release\moc_virheform.o
 );

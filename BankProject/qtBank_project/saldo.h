@@ -23,12 +23,14 @@ class Saldo : public QWidget
 public:
     explicit Saldo(QWidget *parent = 0);
     ~Saldo();
+signals:
+    void secondWindow();
 
 private slots:
 
     void on_pushButton_Takaisin_clicked();
 
-    void on_pushButton_Kirjaudu_ulos_clicked();
+
 
     void on_pushButton_HaeSaldo_clicked();
 

@@ -20,10 +20,7 @@ void Hae_Lainaa::on_pushButton_Ok_clicked()
 
 void Hae_Lainaa::on_pushButton_Takaisin_clicked()
 {
-
+    this->close();
+    emit secondWindow();
 }
 
-void Hae_Lainaa::on_pushButton_Kirjaudu_ulos_clicked()
-{
-
-}
